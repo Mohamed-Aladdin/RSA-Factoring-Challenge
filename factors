@@ -1,0 +1,31 @@
+#!/usr/bin/python3
+
+from sys import argv
+
+
+def factorize_number(n):
+    x = 2
+
+    if n < 2:
+        return
+
+    while n % x:
+        x += 1
+
+    print("{:.0f}={:.0f}*{:.0f}".format(n, n / x, x))
+
+    if len(argv) != 2:
+        exit()
+
+
+def main():
+    try:
+        with open(argv[1]) as file:
+            line_input = file.readline()
+
+            while line_input != "":
+                num = int(line_input.split('\n')[0])
+                factorize_number(num)
+                line_input = file.readline()
+    except Exception:
+        pass
