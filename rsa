@@ -3,7 +3,7 @@
 from sys import argv
 
 
-def factorize_primes():
+def factorize_prime():
     try:
         with open(argv[1]) as file:
             for ln in file:
@@ -16,15 +16,17 @@ def factorize_primes():
 
                 while x < ln // 2:
                     if ln % x == 0:
-                        print("{}={}*{}".format(line_number,
-                              line_number // i, i))
+                        print("{}={}*{}".format(ln,
+                              ln // x, x))
                         break
                     x += 2
 
                 if x == (ln // 2) + 1:
-                    print("{}={}*{}".format(line_number, line_number, 1))
+                    print("{}={}*{}".format(ln, ln, 1))
     except IndexError:
         pass
 
 
-factorize()
+if __name__ == "__main__":
+
+    factorize_prime()
