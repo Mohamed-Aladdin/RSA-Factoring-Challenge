@@ -1,6 +1,31 @@
 #!/usr/bin/python3
 
-import sys
+from sys import argv
+
 
 def factorize_primes():
+    try:
+        with open(argv[1]) as file:
+            for ln in file:
+                ln = int(ln)
 
+                if ln % 2 == 0:
+                    print("{}={}*{}".format(ln, ln // 2, 2))
+                    continue
+                x = 3
+
+                while x < ln // 2:
+                    if ln % x == 0:
+                        print("{}={}*{}".format(line_number,
+                              line_number // i, i))
+                        break
+                    x += 2
+
+                if x == (ln // 2) + 1:
+                    print("{}={}*{}".format(line_number, line_number, 1))
+    except IndexError:
+        pass
+
+
+def main():
+    factorize()
