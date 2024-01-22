@@ -27,5 +27,4 @@ def factorize_primes():
         pass
 
 
-def main():
-    factorize()
+factorize()

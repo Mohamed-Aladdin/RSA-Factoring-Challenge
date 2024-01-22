@@ -17,8 +17,6 @@ def factorize_number(n):
     if len(argv) != 2:
         exit()
 
-
-def main():
     try:
         with open(argv[1]) as file:
             line_input = file.readline()
